@@ -1,0 +1,68 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
+<body>
+
+<div class="w3-content w3-display-container">
+
+<div class="w3-display-container mySlides">
+  <img src="https://www.residentevil.com/4/_asset/images/bio4-share-global.png" style="width:100%; height: 500px; object-fit:cover">
+  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+    RESIDENT EVIL
+  </div>
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="https://nfhsraiderwire.com/wp-content/uploads/2020/02/JC-Jumanji-900x505.jpg" style="width:100%; height: 500px; object-fit:cover">
+  <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+    JUMANJI
+  </div>
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="https://i.guim.co.uk/img/media/fbb1974c1ebbb6bf4c4beae0bb3d9cb93901953c/80_0_2400_1440/master/2400.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=ede2b27f1cea7c3be30b938195c0cc5c" style="width:100%; height: 500px; object-fit:cover">
+  <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
+    JOKER
+  </div>
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="https://indiankhabri.in/wp-content/uploads/2020/11/Kesari-cover-images.jpg" style="width:100%; height: 500px; object-fit:cover">
+  <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-black">
+    KESARI
+  </div>
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="https://assets1.ignimgs.com/2020/05/12/scoob-blogroll-1589264786966.jpg" style="width:100%; height: 500px; object-fit:cover">
+  <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+    SCOOB
+  </div>
+</div>
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 2500);
+}
+</script>
+</body>
+
+{% endblock %}

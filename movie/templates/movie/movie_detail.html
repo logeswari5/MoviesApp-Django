@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block body %}
+  <h1>Title: {{ movie.title }}</h1>
+
+<p><strong>DIRECTOR:</strong> <a href="{% url 'director-detail' movie.directors.id %}">{{ movie.directors }}</a></p>
+  <p><strong>STUDIO:</strong> {{ movie.studio }}</p>
+  <p><strong>SLUG:</strong> {{ movie.slug }}</p>
+  <p><strong>ASIN:</strong> {{ movie.asin }}</p>
+  <p><strong>MOVIE LINK:</strong> {{ movie.movie_url }}</p>
+  <p><strong>GENRE:</strong> {{ movie.genre.all|join:", " }}</p>
+
+</div>
+ </div>
+
+<a type="button" class="btn btn-outline-dark" href="{% url 'movie-update' movie.pk %}" role="button">UPDATE MOVIE</a>
+<a type="button" class="btn btn-outline-dark" href="{% url 'movie-delete' movie.pk %}" role="button">DELETE MOVIE</a>
+
+  {% endblock %}

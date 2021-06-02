@@ -12,6 +12,14 @@
   <a href="{% url 'movies' %}" class="w3-bar-item w3-button">MOVIE LIST</a>
     <a href="{% url 'directors' %}" class="w3-bar-item w3-button">ALL DIRECTORS</a>
     <a href="{% url 'studios' %}" class="w3-bar-item w3-button">STUDIO LIST</a>
+    <ul class="sidebar-nav">
+   {% if user.is_authenticated %}
+     <li>User: {{ user.get_username }}</li>
+     <li><a href="{% url 'logout'%}?next={{request.path}}">LOGOUT</a></li>
+   {% else %}
+     <li><a href="{% url 'login'%}?next={{request.path}}">LOGIN</a></li>
+   {% endif %}
+  </ul>
 </div>
 <div class="w3-blue">
   <button class="w3-button w3-blue w3-xlarge" onclick="w3_open()">☰</button>
